@@ -1,4 +1,5 @@
-# Вывести список всех удаленных репозиториев для локального.
+## Вывести список всех удаленных репозиториев для локального.
+---
 vanadiy@vanadiy:~$ git clone git@github.com:tms-dos17-onl/vladimir-bobko.git
 Cloning into 'vladimir-bobko'...
 remote: Enumerating objects: 40, done.
@@ -23,14 +24,16 @@ branch.main.merge=refs/heads/main
 vanadiy@vanadiy:~/vladimir-bobko$ git remote -v
 origin	git@github.com:tms-dos17-onl/vladimir-bobko.git (fetch)
 origin	git@github.com:tms-dos17-onl/vladimir-bobko.git (push)
-
-# Вывести список всех веток.
+---
+## Вывести список всех веток.
+---
 vanadiy@vanadiy:~/vladimir-bobko$ git branch -a
 * main
   remotes/origin/HEAD -> origin/main
   remotes/origin/main
-
-# Вывести последниe 3 коммитa с помощью git log.
+---
+## Вывести последниe 3 коммитa с помощью git log.
+---
 vanadiy@vanadiy:~/vladimir-bobko$ git log -3
 commit b09f34e71b69312822d12ddfbdffbd938e3ffb41 (HEAD -> main, origin/main, origin/HEAD)
 Author: vanadiy7 <babaika.ko@gmail.com>
@@ -49,8 +52,9 @@ Author: vanadiy7 <babaika.ko@gmail.com>
 Date:   Tue Jul 25 17:32:44 2023 +0300
 
     Add files via upload
-
-# Создать пустой файл README.md и сделать коммит.
+---
+## Создать пустой файл README.md и сделать коммит.
+---
 vanadiy@vanadiy:~/vladimir-bobko$ touch README.md
 vanadiy@vanadiy:~/vladimir-bobko$ git status
 On branch main
@@ -71,8 +75,9 @@ vanadiy@vanadiy:~/vladimir-bobko$ git commit -m "Add file readme"
 [main 9bdf2c2] Add file readme
  1 file changed, 0 insertions(+), 0 deletions(-)
  create mode 100644 README.md
-
-# Добавить фразу "Hello, DevOps" в README.md файл и сделать коммит. 
+---
+## Добавить фразу "Hello, DevOps" в README.md файл и сделать коммит. 
+---
 vanadiy@vanadiy:~/vladimir-bobko$ cat README.md 
 "Hello, DevOps"
 vanadiy@vanadiy:~/vladimir-bobko$ git status
@@ -89,8 +94,9 @@ no changes added to commit (use "git add" and/or "git commit -a")
 vanadiy@vanadiy:~/vladimir-bobko$ git commit -am "Modify file readme"
 [main 5f8adbb] Modify file readme
  1 file changed, 1 insertion(+)
-
-# Сделать реверт последнего коммита. Вывести последниe 3 коммитa с помощью git log. 
+---
+## Сделать реверт последнего коммита. Вывести последниe 3 коммитa с помощью git log. 
+---
 vanadiy@vanadiy:~/vladimir-bobko$ git revert 5f8adbb9a922cc41d2641f158d243a324c880731
 [main 48a619c] Revert "Modify file readme" Sorry!!!
  1 file changed, 1 deletion(-)
@@ -114,11 +120,14 @@ Author: Vladimir Bobko <babaika.ko@gmail.com>
 Date:   Thu Jul 27 13:01:04 2023 +0300
 
     Add file readme
-# Удалить последние 3 коммита с помощью git reset.
+---
+## Удалить последние 3 коммита с помощью git reset.
+---
 vanadiy@vanadiy:~/vladimir-bobko$ git reset --hard  HEAD~3
 HEAD is now at b09f34e Add files via upload
-
-# Вернуть коммит, где добавляется пустой файл README.md. Для этого найти ID коммита в git reflog, а затем сделать cherry-pick.
+---
+## Вернуть коммит, где добавляется пустой файл README.md. Для этого найти ID коммита в git reflog, а затем сделать cherry-pick.
+---
 vanadiy@vanadiy:~/vladimir-bobko$ git reflog
 b09f34e (HEAD -> main, origin/main, origin/HEAD) HEAD@{0}: reset: moving to HEAD~3
 48a619c HEAD@{1}: revert: Revert "Modify file readme" Sorry!!!
@@ -130,19 +139,22 @@ vanadiy@vanadiy:~/vladimir-bobko$ git cherry-pick 9bdf2c2
  Date: Thu Jul 27 13:01:04 2023 +0300
  1 file changed, 0 insertions(+), 0 deletions(-)
  create mode 100644 README.md
-
-# Удалить последний коммит с помощью git reset.
+---
+## Удалить последний коммит с помощью git reset.
+---
 vanadiy@vanadiy:~/vladimir-bobko$ git reset --hard  HEAD~
 HEAD is now at b09f34e Add files via upload
-
-# Переключиться на ветку main или master. Если ветка называется master, то переименовать её в main.
-anadiy@vanadiy:~/vladimir-bobko$ git branch -a
+---
+## Переключиться на ветку main или master. Если ветка называется master, то переименовать её в main.
+---
+vanadiy@vanadiy:~/vladimir-bobko$ git branch -a
 * main
   remotes/origin/HEAD -> origin/main
   remotes/origin/main
 	**Ветка называется main**
-
-# Скопировать файл <https://github.com/tms-dos17-onl/_sandbox/blob/main/.github/workflows/validate-shell.yaml>, положить его по такому же относительному пути в репозиторий. Создать коммит и запушить его в удаленный репозиторий.
+---
+## Скопировать файл <https://github.com/tms-dos17-onl/_sandbox/blob/main/.github/workflows/validate-shell.yaml>, положить его по такому же относительному пути в репозиторий. Создать коммит и запушить его в удаленный репозиторий.
+---
 vanadiy@vanadiy:~/vladimir-bobko$ mkdir .github
 vanadiy@vanadiy:~/vladimir-bobko$ cd .github
 vanadiy@vanadiy:~/vladimir-bobko/.github$ mkdir worklows
@@ -176,8 +188,9 @@ Total 8 (delta 2), reused 0 (delta 0), pack-reused 0
 remote: Resolving deltas: 100% (2/2), completed with 1 local object.
 To github.com:tms-dos17-onl/vladimir-bobko.git
    b09f34e..f1c1b7c  main -> main
-
-# Создать из ветки main ветку develop. Переключиться на неё и создать README.md в корне репозитория. Написать в этом файле какие инструменты DevOps вам знакомы и с какими вы бы хотели познакомиться больше всего (2-3 пункта).
+---
+## Создать из ветки main ветку develop. Переключиться на неё и создать README.md в корне репозитория. Написать в этом файле какие инструменты DevOps вам знакомы и с какими вы бы хотели познакомиться больше всего (2-3 пункта).
+---
 vanadiy@vanadiy:~/vladimir-bobko$ git branch develop
 vanadiy@vanadiy:~/vladimir-bobko$ git checkout develop
 Switched to branch 'develop'
@@ -200,8 +213,9 @@ remote:
 To github.com:tms-dos17-onl/vladimir-bobko.git
  * [new branch]      develop -> develop
  > warning Для выполнения задания использовать Markdown, а именно заголовок и списки
-
-# Создать из ветки main ветку support и создать там файлик LICENSE с содержимым <https://www.apache.org/licenses/LICENSE-2.0.txt>. Создать коммит. Вывести последниe 3 коммитa.
+---
+## Создать из ветки main ветку support и создать там файлик LICENSE с содержимым <https://www.apache.org/licenses/LICENSE-2.0.txt>. Создать коммит. Вывести последниe 3 коммитa.
+---
 vanadiy@vanadiy:~/vladimir-bobko$ git checkout main
 Switched to branch 'main'
 Your branch is up to date with 'origin/main'.
@@ -249,8 +263,9 @@ remote:      https://github.com/tms-dos17-onl/vladimir-bobko/pull/new/support
 remote: 
 To github.com:tms-dos17-onl/vladimir-bobko.git
  * [new branch]      support -> support
-
-# Переключиться обратно на ветку main и создать там файлик LICENSE с содержимым <https://github.com/git/git-scm.com/blob/main/MIT-LICENSE.txt>. Создать коммит. Вывести последниe 3 коммитa.
+---
+## Переключиться обратно на ветку main и создать там файлик LICENSE с содержимым <https://github.com/git/git-scm.com/blob/main/MIT-LICENSE.txt>. Создать коммит. Вывести последниe 3 коммитa.
+---
 vanadiy@vanadiy:~/vladimir-bobko$ git checkout main
 Switched to branch 'main'
 Your branch is up to date with 'origin/main'.
@@ -291,7 +306,8 @@ Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
 remote: Resolving deltas: 100% (1/1), completed with 1 local object.
 To github.com:tms-dos17-onl/vladimir-bobko.git
    f1c1b7c..27b2cdc  main -> main
-# Сделать merge ветки support в ветку main и решить конфликты путем выбора содержимого только одной лицензии.
+## Сделать merge ветки support в ветку main и решить конфликты путем выбора содержимого только одной лицензии.
+---
 vanadiy@vanadiy:~/vladimir-bobko$ git merge support
 Auto-merging LICENSE
 CONFLICT (add/add): Merge conflict in LICENSE
@@ -321,14 +337,16 @@ All conflicts fixed but you are still merging.
 
 vanadiy@vanadiy:~/vladimir-bobko$ git merge --continue
 [main f2998ab] Merge branch 'support' Conflict!!!!!
-
-# Переключиться на ветку develop и сделать rebase относительно ветки main.
+---
+## Переключиться на ветку develop и сделать rebase относительно ветки main.
+---
 vanadiy@vanadiy:~/vladimir-bobko$ git checkout develop
 Switched to branch 'develop'
 vanadiy@vanadiy:~/vladimir-bobko$ git rebase main
 Successfully rebased and updated refs/heads/develop.
-
-# Вывести историю последних 10 коммитов в виде графа с помощью команды git log -10 --oneline --graph.
+---
+## Вывести историю последних 10 коммитов в виде графа с помощью команды git log -10 --oneline --graph.
+---
 vanadiy@vanadiy:~/vladimir-bobko$ git log -10 --oneline --graph
 * d9231a3 (HEAD -> develop) Add file branch develop
 *   f2998ab (main) Merge branch 'support' Conflict!!!!!
@@ -342,8 +360,9 @@ vanadiy@vanadiy:~/vladimir-bobko$ git log -10 --oneline --graph
 * 3cc8084 Create readme
 * 4977bf6 Add files via upload
 * dd6138c Create readme
-
-# Запушить ветку develop. В истории коммитов должен быть мерж support -> main
+---
+## Запушить ветку develop. В истории коммитов должен быть мерж support -> main
+---
 vanadiy@vanadiy:~/vladimir-bobko$ git push -f origin develop
 Enumerating objects: 8, done.
 Counting objects: 100% (7/7), done.
@@ -354,6 +373,8 @@ Total 4 (delta 1), reused 0 (delta 0), pack-reused 0
 remote: Resolving deltas: 100% (1/1), completed with 1 local object.
 To github.com:tms-dos17-onl/vladimir-bobko.git
  + 9d7f6b0...d9231a3 develop -> develop (forced update)
-
-# Зайти в свой репозиторий на GitHub и создать Pull Request из ветки develop в ветку main.
+---
+## Зайти в свой репозиторий на GitHub и создать Pull Request из ветки develop в ветку main.
+---
 done
+---
