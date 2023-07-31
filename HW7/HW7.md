@@ -8,7 +8,6 @@ remote: Compressing objects: 100% (37/37), done.
 remote: Total 40 (delta 12), reused 0 (delta 0), pack-reused 0
 Receiving objects: 100% (40/40), 26.52 KiB | 348.00 KiB/s, done.
 Resolving deltas: 100% (12/12), done.
-
 vanadiy@vanadiy:~/vladimir-bobko$ git config -l
 user.name=Vladimir Bobko
 user.email=babaika.ko@gmail.com
@@ -20,7 +19,6 @@ remote.origin.url=git@github.com:tms-dos17-onl/vladimir-bobko.git
 remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
 branch.main.remote=origin
 branch.main.merge=refs/heads/main
-
 vanadiy@vanadiy:~/vladimir-bobko$ git remote -v
 origin	git@github.com:tms-dos17-onl/vladimir-bobko.git (fetch)
 origin	git@github.com:tms-dos17-onl/vladimir-bobko.git (push)
