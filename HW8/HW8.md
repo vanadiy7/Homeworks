@@ -60,8 +60,8 @@
 
 ## 2.Найти и вывести в консоль домашние каталоги для текущего пользователя и root.
 ---
-vanadiy@vanadiy:~$ cat ./user_home.sh 
-	#!/usr/bin/bash
+	vanadiy@vanadiy:~$ cat ./user_home.sh 
+		#!/usr/bin/bash
 
 	cat /etc/passwd | grep -w $1 | awk -F":" '{print $6}'
 ---
