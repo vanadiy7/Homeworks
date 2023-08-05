@@ -9,18 +9,14 @@
   I/O size (minimum/optimal): 512 bytes / 512 bytes
   Disklabel type: gpt
   Disk identifier: 011B0993-F3D6-4298-BCA0-688CA5E4710F
-  
-  Device       Start      End  Sectors Size Type
+    Device       Start      End  Sectors Size Type
   /dev/sda1     2048     4095     2048   1M BIOS boot
   /dev/sda2     4096  4198399  4194304   2G Linux filesystem
   /dev/sda3  4198400 62912511 58714112  28G Linux filesystem
-  
-  
   Disk /dev/mapper/ubuntu--vg-ubuntu--lv: 14 GiB, 15028191232 bytes, 29351936 sectors
   Units: sectors of 1 * 512 = 512 bytes
   Sector size (logical/physical): 512 bytes / 512 bytes
   I/O size (minimum/optimal): 512 bytes / 512 bytes
-  
   После добавления диска:
   vanadiy@ubn:~$ sudo fdisk -l
   Disk /dev/sda: 30 GiB, 32212254720 bytes, 62914560 sectors
@@ -30,25 +26,19 @@
   I/O size (minimum/optimal): 512 bytes / 512 bytes
   Disklabel type: gpt
   Disk identifier: 011B0993-F3D6-4298-BCA0-688CA5E4710F
-  
   Device       Start      End  Sectors Size Type
   /dev/sda1     2048     4095     2048   1M BIOS boot
   /dev/sda2     4096  4198399  4194304   2G Linux filesystem
   /dev/sda3  4198400 62912511 58714112  28G Linux filesystem
-  
-  
   Disk /dev/sdb: 5 GiB, 5368709120 bytes, 10485760 sectors
   Disk model: VBOX HARDDISK   
   Units: sectors of 1 * 512 = 512 bytes
   Sector size (logical/physical): 512 bytes / 512 bytes
   I/O size (minimum/optimal): 512 bytes / 512 bytes
-  
-  
   Disk /dev/mapper/ubuntu--vg-ubuntu--lv: 14 GiB, 15028191232 bytes, 29351936 sectors
   Units: sectors of 1 * 512 = 512 bytes
   Sector size (logical/physical): 512 bytes / 512 bytes
   I/O size (minimum/optimal): 512 bytes / 512 bytes
-  
   vanadiy@ubn:~$ lsblk
   NAME                      MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
   loop0                       7:0    0  63.4M  1 loop /snap/core20/1974
@@ -63,7 +53,6 @@
     └─ubuntu--vg-ubuntu--lv 253:0    0    14G  0 lvm  /
   sdb                         8:16   0     5G  0 disk 
   sr0                        11:0    1  1024M  0 rom  
-  
   Посмотрим список физических томов
   vanadiy@ubn:~$ sudo pvs
     PV         VG        Fmt  Attr PSize   PFree 
