@@ -253,4 +253,81 @@
       lines 1-14/14 (END)
       vanadiy@ubn:/opt$ sudo systemctl enable nexus
       Created symlink /etc/systemd/system/multi-user.target.wants/nexus.service → /etc/systemd/system/nexus.service.
+vanadiy@ubn:~$ sudo nano /etc/apt/sources.list
+vanadiy@ubn:~$ sudo cat /etc/apt/sources.list
+# See http://help.ubuntu.com/community/UpgradeNotes for how to upgrade to
+deb http://192.168.100.4:8081/repository/first_nexus jammy universe
+# newer versions of the distribution.
+deb http://by.archive.ubuntu.com/ubuntu jammy main restricted
+# deb-src http://by.archive.ubuntu.com/ubuntu jammy main restricted
+
+## Major bug fix updates produced after the final release of the
+## distribution.
+deb http://by.archive.ubuntu.com/ubuntu jammy-updates main restricted
+# deb-src http://by.archive.ubuntu.com/ubuntu jammy-updates main restricted
+
+## N.B. software from this repository is ENTIRELY UNSUPPORTED by the Ubuntu
+## team. Also, please note that software in universe WILL NOT receive any
+## review or updates from the Ubuntu security team.
+deb http://by.archive.ubuntu.com/ubuntu jammy universe
+# deb-src http://by.archive.ubuntu.com/ubuntu jammy universe
+deb http://by.archive.ubuntu.com/ubuntu jammy-updates universe
+# deb-src http://by.archive.ubuntu.com/ubuntu jammy-updates universe
+
+## N.B. software from this repository is ENTIRELY UNSUPPORTED by the Ubuntu
+## team, and may not be under a free licence. Please satisfy yourself as to
+## your rights to use the software. Also, please note that software in
+## multiverse WILL NOT receive any review or updates from the Ubuntu
+## security team.
+deb http://by.archive.ubuntu.com/ubuntu jammy multiverse
+# deb-src http://by.archive.ubuntu.com/ubuntu jammy multiverse
+deb http://by.archive.ubuntu.com/ubuntu jammy-updates multiverse
+# deb-src http://by.archive.ubuntu.com/ubuntu jammy-updates multiverse
+
+## N.B. software from this repository may not have been tested as
+## extensively as that contained in the main release, although it includes
+## newer versions of some applications which may provide useful features.
+## Also, please note that software in backports WILL NOT receive any review
+## or updates from the Ubuntu security team.
+deb http://by.archive.ubuntu.com/ubuntu jammy-backports main restricted universe multiverse
+# deb-src http://by.archive.ubuntu.com/ubuntu jammy-backports main restricted universe multiverse
+
+deb http://by.archive.ubuntu.com/ubuntu jammy-security main restricted
+# deb-src http://by.archive.ubuntu.com/ubuntu jammy-security main restricted
+deb http://by.archive.ubuntu.com/ubuntu jammy-security universe
+# deb-src http://by.archive.ubuntu.com/ubuntu jammy-security universe
+deb http://by.archive.ubuntu.com/ubuntu jammy-security multiverse
+# deb-src http://by.archive.ubuntu.com/ubuntu jammy-security multiverse
+vanadiy@ubn:~$ sudo apt install snap
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following NEW packages will be installed:
+  snap
+0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+Need to get 377 kB of archives.
+After this operation, 2,756 kB of additional disk space will be used.
+Get:1 http://192.168.100.4:8081/repository/first_nexus jammy/universe amd64 snap amd64 2013-11-29-11 [377 kB]
+Fetched 377 kB in 11s (34.1 kB/s)
+Selecting previously unselected package snap.
+(Reading database ... 74824 files and directories currently installed.)
+Preparing to unpack .../snap_2013-11-29-11_amd64.deb ...
+Unpacking snap (2013-11-29-11) ...
+Setting up snap (2013-11-29-11) ...
+Processing triggers for man-db (2.10.2-1) ...
+Scanning processes...                                                                                 
+Scanning candidates...                                                                                
+Scanning linux images...                                                                              
+
+Running kernel seems to be up-to-date.
+
+Restarting services...
+Service restarts being deferred:
+ systemctl restart nexus.service
+
+No containers need to be restarted.
+
+No user sessions are running outdated binaries.
+
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
 ---
