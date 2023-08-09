@@ -5,7 +5,7 @@
 
 
 <!DOCTYPE html>
-<html lang="en" data-color-mode="auto" data-light-theme="light" data-dark-theme="dark"  data-a11y-animated-images="system">
+<html lang="en" data-color-mode="auto" data-light-theme="light" data-dark-theme="dark"  data-a11y-animated-images="system" data-a11y-link-underlines="false">
   <head>
     <meta charset="utf-8">
   <link rel="dns-prefetch" href="https://github.githubassets.com">
@@ -20,18 +20,18 @@
   <link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/light-8cafbcbd78f4.css" /><link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/dark-31dc14e38457.css" /><link data-color-theme="dark_dimmed" crossorigin="anonymous" media="all" rel="stylesheet" data-href="https://github.githubassets.com/assets/dark_dimmed-71414d661fe2.css" /><link data-color-theme="dark_high_contrast" crossorigin="anonymous" media="all" rel="stylesheet" data-href="https://github.githubassets.com/assets/dark_high_contrast-ba96c7f1d660.css" /><link data-color-theme="dark_colorblind" crossorigin="anonymous" media="all" rel="stylesheet" data-href="https://github.githubassets.com/assets/dark_colorblind-7471c22cdb6a.css" /><link data-color-theme="light_colorblind" crossorigin="anonymous" media="all" rel="stylesheet" data-href="https://github.githubassets.com/assets/light_colorblind-80180bed15ed.css" /><link data-color-theme="light_high_contrast" crossorigin="anonymous" media="all" rel="stylesheet" data-href="https://github.githubassets.com/assets/light_high_contrast-e89b9cdecb75.css" /><link data-color-theme="light_tritanopia" crossorigin="anonymous" media="all" rel="stylesheet" data-href="https://github.githubassets.com/assets/light_tritanopia-77f15e9154df.css" /><link data-color-theme="dark_tritanopia" crossorigin="anonymous" media="all" rel="stylesheet" data-href="https://github.githubassets.com/assets/dark_tritanopia-f598f8dd18ae.css" />
   
     <link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/primer-primitives-fb1d51d1ef66.css" />
-    <link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/primer-05fec56eb582.css" />
-    <link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/global-96fc04180b0b.css" />
+    <link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/primer-8f43f7721dc7.css" />
+    <link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/global-9f6ffd386e47.css" />
     <link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/github-21dc4e5af19d.css" />
   
 
   
 
-  <script type="application/json" id="client-env">{"locale":"en","featureFlags":["failbot_handle_non_errors","fix_react_title","geojson_azure_maps","image_metric_tracking","turbo_experiment_risky","use_scroll_restoration"]}</script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/wp-runtime-239668e6d4a0.js"></script>
+  <script type="application/json" id="client-env">{"locale":"en","featureFlags":["failbot_handle_non_errors","fix_react_title","geojson_azure_maps","image_metric_tracking","remove_react_base_styles","turbo_experiment_risky","use_scroll_restoration","sample_network_conn_type"]}</script>
+<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/wp-runtime-eab00fc96ae7.js"></script>
 <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_dompurify_dist_purify_js-64d590970fa6.js"></script>
 <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_stacktrace-parser_dist_stack-trace-parser_esm_js-node_modules_github_bro-a4c183-ae93d3fba59c.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/ui_packages_soft-nav_soft-nav_ts-db8b037dfa8f.js"></script>
+<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/ui_packages_soft-nav_soft-nav_ts-78d5d34f4891.js"></script>
 <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/environment-c2140938ffde.js"></script>
 <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_github_selector-observer_dist_index_esm_js-2646a2c533e3.js"></script>
 <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_primer_behaviors_dist_esm_focus-zone_js-d55308df5023.js"></script>
@@ -39,14 +39,13 @@
 <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_fzy_js_index_js-node_modules_github_markdown-toolbar-element_dist_index_js-d2119e75298d.js"></script>
 <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_delegated-events_dist_index_js-node_modules_github_auto-complete-element-5b3870-9b38c0812424.js"></script>
 <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_github_filter-input-element_dist_index_js-node_modules_github_remote-inp-8873b7-5771678648e0.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_github_file-attachment-element_dist_index_js-node_modules_github_text-ex-3415a8-7ecc10fb88d0.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_primer_view-components_app_components_primer_primer_js-node_modules_gith-e7a1e2-0c753046063c.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/github-elements-82e8d1a2fb81.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/element-registry-7302f590387d.js"></script>
+<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_github_file-attachment-element_dist_index_js-node_modules_primer_view-co-bdc901-75dcff5a76ba.js"></script>
+<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/github-elements-0d61e726fada.js"></script>
+<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/element-registry-7325b6cb40b9.js"></script>
 <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_lit-html_lit-html_js-9d9fe1859ce5.js"></script>
 <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_github_hydro-analytics-client_dist_analytics-client_js-node_modules_gith-f3aee1-fd3c22610e40.js"></script>
 <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_morphdom_dist_morphdom-esm_js-b1fdd7158cf0.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_github_mini-throttle_dist_index_js-node_modules_github_alive-client_dist-bf5aa2-424aa982deef.js"></script>
+<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_github_mini-throttle_dist_index_js-node_modules_github_alive-client_dist-bf5aa2-4aefce0fc3c8.js"></script>
 <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_github_turbo_dist_turbo_es2017-esm_js-1f4793023fcd.js"></script>
 <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_github_remote-form_dist_index_js-node_modules_scroll-anchoring_dist_scro-52dc4b-e1e33bfc0b7e.js"></script>
 <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_color-convert_index_js-35b3ae68c408.js"></script>
@@ -54,10 +53,10 @@
 <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/app_assets_modules_github_updatable-content_ts-126aeb5c22c9.js"></script>
 <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/app_assets_modules_github_behaviors_task-list_ts-app_assets_modules_github_onfocus_ts-app_ass-079b43-c46fa3ecf26e.js"></script>
 <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/app_assets_modules_github_sticky-scroll-into-view_ts-050ad6637d58.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/app_assets_modules_github_blob-anchor_ts-app_assets_modules_github_cookies_ts-app_assets_modu-4c025d-23cbb87a0af9.js"></script>
+<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/app_assets_modules_github_behaviors_ajax-error_ts-app_assets_modules_github_behaviors_include-2e2258-f67f752a4d27.js"></script>
 <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/app_assets_modules_github_behaviors_commenting_edit_ts-app_assets_modules_github_behaviors_ht-83c235-f22ac6b94445.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/app_assets_modules_github_behaviors_ajax-error_ts-app_assets_modules_github_behaviors_include-2e2258-113626c1b575.js"></script>
-<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/behaviors-717f67f10853.js"></script>
+<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/app_assets_modules_github_blob-anchor_ts-app_assets_modules_github_filter-sort_ts-app_assets_-c96432-3460172f1b1f.js"></script>
+<script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/behaviors-a77de31b9c67.js"></script>
 <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/vendors-node_modules_delegated-events_dist_index_js-node_modules_github_catalyst_lib_index_js-06ff531-fe0b8ccc90a5.js"></script>
 <script crossorigin="anonymous" defer="defer" type="application/javascript" src="https://github.githubassets.com/assets/notifications-global-f57687007bfc.js"></script>
   
@@ -72,7 +71,7 @@
   <meta name="current-catalog-service-hash" content="82c569b93da5c18ed649ebd4c2c79437db4611a6a1373e805a3cb001c64130b7">
 
 
-  <meta name="request-id" content="E7C0:396B:529D4E1:53DAD95:64C260A0" data-pjax-transient="true"/><meta name="html-safe-nonce" content="e000cf886aefac8eaaf80a9c09c193be53b70a448388a0be66974f3080b4a6f3" data-pjax-transient="true"/><meta name="visitor-payload" content="eyJyZWZlcnJlciI6IiIsInJlcXVlc3RfaWQiOiJFN0MwOjM5NkI6NTI5RDRFMTo1M0RBRDk1OjY0QzI2MEEwIiwidmlzaXRvcl9pZCI6Ijg1MzcwNjI3NzMxODI1ODcwNDAiLCJyZWdpb25fZWRnZSI6ImZyYSIsInJlZ2lvbl9yZW5kZXIiOiJmcmEifQ==" data-pjax-transient="true"/><meta name="visitor-hmac" content="82d5c6ee0719d5acea39533db86808654d95d4173ee5f850fdd5c6c4aed8b674" data-pjax-transient="true"/>
+  <meta name="request-id" content="D2B2:1029:AEB4826:B11CD5F:64D37994" data-pjax-transient="true"/><meta name="html-safe-nonce" content="f04a7f2502e75e74525b6f9d8304e7e176c64461ec4e900139363cedc6cf4023" data-pjax-transient="true"/><meta name="visitor-payload" content="eyJyZWZlcnJlciI6IiIsInJlcXVlc3RfaWQiOiJEMkIyOjEwMjk6QUVCNDgyNjpCMTFDRDVGOjY0RDM3OTk0IiwidmlzaXRvcl9pZCI6IjU2NDk2MTg4OTU5MzAzMTA2MCIsInJlZ2lvbl9lZGdlIjoiZnJhIiwicmVnaW9uX3JlbmRlciI6ImZyYSJ9" data-pjax-transient="true"/><meta name="visitor-hmac" content="7e85b43db433c9ca288b7d5ecc7755f5fc36213c51be80e42cf93a8e7e204a29" data-pjax-transient="true"/>
 
 
 
@@ -147,17 +146,17 @@
 
         <meta name="expected-hostname" content="github.com">
 
-    <meta name="enabled-features" content="FAILBOT_HANDLE_NON_ERRORS,FIX_REACT_TITLE,GEOJSON_AZURE_MAPS,IMAGE_METRIC_TRACKING,TURBO_EXPERIMENT_RISKY,USE_SCROLL_RESTORATION">
+    <meta name="enabled-features" content="FAILBOT_HANDLE_NON_ERRORS,FIX_REACT_TITLE,GEOJSON_AZURE_MAPS,IMAGE_METRIC_TRACKING,REMOVE_REACT_BASE_STYLES,TURBO_EXPERIMENT_RISKY,USE_SCROLL_RESTORATION,SAMPLE_NETWORK_CONN_TYPE">
 
 
-  <meta http-equiv="x-pjax-version" content="7c8b7713325ea37cf6a4043104ce5b06b657a6d7897ba37431eaddbfd214206a" data-turbo-track="reload">
+  <meta http-equiv="x-pjax-version" content="9dabee4b1e2a1b2e1f940cfdc693fd6e415af7ff25e5244ec8e173faafb9153e" data-turbo-track="reload">
   <meta http-equiv="x-pjax-csp-version" content="d578db686ab50f6f79f53006983acd122464dfeec8531d38fe12d520f9cbf1bc" data-turbo-track="reload">
-  <meta http-equiv="x-pjax-css-version" content="0605edbc2f984c4636338bb4c6da1ec667487300b521cf7496daf0f49b303cea" data-turbo-track="reload">
-  <meta http-equiv="x-pjax-js-version" content="d814d548d5f0da9a20647781b86181421e760e52acf518c1fad3745258a55b84" data-turbo-track="reload">
+  <meta http-equiv="x-pjax-css-version" content="0ed3e55c913a254fe000c9f728be4da6daf6c4817d1ccffbe2e73233f7e5a277" data-turbo-track="reload">
+  <meta http-equiv="x-pjax-js-version" content="b1886df0063bae7b5b8ea557a7a24c15a1670a40d26c76fbc8e01d961112e34d" data-turbo-track="reload">
 
   <meta name="turbo-cache-control" content="no-preview" data-turbo-transient="">
 
-      <link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/site-aa0bea65ed3d.css" />
+      <link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/site-657ed51f7599.css" />
   <link rel="preload" href="https://github.githubassets.com/static/fonts/github/mona-sans.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="is_logged_out_page" content="true">
 
@@ -587,7 +586,7 @@
                 
 
 
-<qbsearch-input class="search-input" data-scope="owner:tms-dos17-onl" data-custom-scopes-path="/search/custom_scopes" data-delete-custom-scopes-csrf="B7vCZY0DA0bcfZANaKtB0TfB-HJ4wnC_IQedz0OIxCtmmNoXuTircLXO6YoNxMrfsBUICWdfjvCoQtT0IOCoLQ" data-max-custom-scopes="10" data-header-redesign-enabled="false" data-initial-value="" data-blackbird-suggestions-path="/search/suggestions" data-jump-to-suggestions-path="/_graphql/GetSuggestedNavigationDestinations" data-current-repository="" data-current-org="" data-current-owner="" data-logged-in="false">
+<qbsearch-input class="search-input" data-scope="owner:tms-dos17-onl" data-custom-scopes-path="/search/custom_scopes" data-delete-custom-scopes-csrf="f8mTqNWaGwAQc-Jk_RgZg7lKdRNA4QdDLli6hCWlHfV7M2qGIQr9xFCQ6TsQa7apN9wBxFLkvJy3-QoLy_u62w" data-max-custom-scopes="10" data-header-redesign-enabled="false" data-initial-value="" data-blackbird-suggestions-path="/search/suggestions" data-jump-to-suggestions-path="/_graphql/GetSuggestedNavigationDestinations" data-current-repository="" data-current-org="" data-current-owner="" data-logged-in="false">
   <div
     class="search-input-container search-with-dialog position-relative d-flex flex-row flex-items-center mr-4 rounded"
     data-action="click:qbsearch-input#searchInputContainerClicked"
@@ -785,7 +784,7 @@
     </div>
   </div>
 </div>
-      <div data-view-component="true" class="Overlay-body">        <!-- '"` --><!-- </textarea></xmp> --></option></form><form id="code-search-feedback-form" data-turbo="false" action="/search/feedback" accept-charset="UTF-8" method="post"><input type="hidden" data-csrf="true" name="authenticity_token" value="m6yenhYuXsewjCfjkQdJPbvRhPsPuZbFmM4Emhh4E+qRrDrFcvoQ6LLLDqNexe1EGvLQTl/jEU1R+mKULJpYCA==" />
+      <div data-view-component="true" class="Overlay-body">        <!-- '"` --><!-- </textarea></xmp> --></option></form><form id="code-search-feedback-form" data-turbo="false" action="/search/feedback" accept-charset="UTF-8" method="post"><input type="hidden" data-csrf="true" name="authenticity_token" value="T+xGab1QcTSQ5rYcf4sJLrMt6J9PUcy4H33jDaC69cPAg7wBmX5Vi2+/KAyWss3C8+QYZUjQegkwJTj2A3sdrg==" />
           <p>We read every piece of feedback, and take your input very seriously.</p>
           <textarea name="feedback" class="form-control width-full mb-2" style="height: 120px" id="feedback"></textarea>
           <input name="include_email" id="include_email" aria-label="Include my email address so I can be contacted" class="form-control mr-2" type="checkbox">
@@ -820,7 +819,7 @@
       <div data-view-component="true" class="Overlay-body">        <div data-target="custom-scopes.customScopesModalDialogFlash"></div>
 
         <div hidden class="create-custom-scope-form" data-target="custom-scopes.createCustomScopeForm">
-        <!-- '"` --><!-- </textarea></xmp> --></option></form><form id="custom-scopes-dialog-form" data-turbo="false" action="/search/custom_scopes" accept-charset="UTF-8" method="post"><input type="hidden" data-csrf="true" name="authenticity_token" value="cibsTLfETuKSVuJ97v8qCAineX6sfDFCSvfVRLFREadu3OagkabCzqLqyANckA87GHEYugpRjVSb/FcrqtghsQ==" />
+        <!-- '"` --><!-- </textarea></xmp> --></option></form><form id="custom-scopes-dialog-form" data-turbo="false" action="/search/custom_scopes" accept-charset="UTF-8" method="post"><input type="hidden" data-csrf="true" name="authenticity_token" value="7Rqn7gOZueXv0Nw0tSwyj2wuez6bIv10xQSgh3Xamd9aqZeMPgZAbnl2ehgGUfpU0+PdKqm0eLwbfLveLlilew==" />
           <div data-target="custom-scopes.customScopesModalDialogFlash"></div>
 
           <input type="hidden" id="custom_scope_id" name="custom_scope_id" data-target="custom-scopes.customScopesIdField">
@@ -838,7 +837,7 @@
                 placeholder="github-ruby"
                 required
                 maxlength="50">
-              <input type="hidden" data-csrf="true" value="1tzYU8VqQ3wlGfxaOyD9cgAWrBeuOkQx7FIxuqBPdPtBtXNNjHUR+kqePhs/CkZmaif+auBqRC0vUSxR6z9g/Q==" />
+              <input type="hidden" data-csrf="true" value="Y4LOLetWCqb3VzKmhBJQ3qg11GlXhuBfC/YO5tEXTriIS8NuGuqHKMXKSNqGlPu4vTuvenpbV+spPcPzMiePkw==" />
             </auto-check>
           </div>
 
@@ -874,7 +873,7 @@
 </modal-dialog></div>
     </custom-scopes>
   </div>
-</qbsearch-input><input type="hidden" data-csrf="true" class="js-data-jump-to-suggestions-path-csrf" value="Q9GT/TYgD6RmsTKilMz8wXOYg5yXtSwKvUAf9ZYw3Ux8r3F+7XRjgF1Z52750YZj34I3sKsrX8CIm5rPLXQ7fA==" />
+</qbsearch-input><input type="hidden" data-csrf="true" class="js-data-jump-to-suggestions-path-csrf" value="fAjN6Qya/brJ5+qsY661MM4sOplgYr4ascfq0K4iKJff1V1T+mySLU2yyoKmhUL1QEZbMvq7PSLkqrHmOGgIVQ==" />
 
 
           <div class="position-relative mr-lg-3 d-lg-inline-block">
@@ -888,7 +887,7 @@
   <div style="width: 300px" data-view-component="true" class="Popover-message Box Popover-message--top-right color-fg-default p-4 mt-2 mx-auto text-left color-shadow-large">
     <h4 data-view-component="true" class="color-fg-default mb-2">                  Sign in to GitHub
 </h4>
-                      <!-- '"` --><!-- </textarea></xmp> --></option></form><form data-turbo="false" action="/session" accept-charset="UTF-8" method="post"><input type="hidden" data-csrf="true" name="authenticity_token" value="SbldaJY1Q/2wFbUywFXxA6GRV+rgsbxxAn3AdTZUbi/omHLlSyPPEA5ATxczae1tS+aZjnZL9U0SxQa4DCMpEg==" />  <label for="login_field">
+                      <!-- '"` --><!-- </textarea></xmp> --></option></form><form data-turbo="false" action="/session" accept-charset="UTF-8" method="post"><input type="hidden" data-csrf="true" name="authenticity_token" value="OUgt+Z9nyZlOvKdpM+DmBdbn4k8KfQFUcTcJzZvPmJMLyb1ggwXp4/k5TklzaGthVsWg4aVJAxUcL8sXW+9qAg==" />  <label for="login_field">
     Username or email address
   </label>
   <input type="text" name="login" id="login_field" class="form-control input-block js-login-field" autocapitalize="off" autocorrect="off" autocomplete="username" autofocus="autofocus" />
@@ -907,9 +906,9 @@
 <input type="hidden" name="allow_signup" id="allow_signup" autocomplete="off" class="form-control" />
 <input type="hidden" name="client_id" id="client_id" autocomplete="off" class="form-control" />
 <input type="hidden" name="integration" id="integration" autocomplete="off" class="form-control" />
-<input class="form-control" type="text" name="required_field_c7ce" hidden="hidden" />
-<input class="form-control" type="hidden" name="timestamp" value="1690460320711" />
-<input class="form-control" type="hidden" name="timestamp_secret" value="c43ef86443e6fb5b7f70e3bf79c53a8b2e0499edb2ce98dc308dc783da7d63db" />
+<input class="form-control" type="text" name="required_field_70ee" hidden="hidden" />
+<input class="form-control" type="hidden" name="timestamp" value="1691580821017" />
+<input class="form-control" type="hidden" name="timestamp_secret" value="446ea9f99b6284ddb557b52fdd9f47560da26dc2e36924d2413e720b379acea7" />
 
 
     <input type="submit" name="commit" value="Sign in" class="btn btn-primary btn-block js-sign-in-button" data-disable-with="Signing in…" data-signin-label="Sign in" data-sso-label="Sign in with your identity provider" development="false" />
@@ -1065,8 +1064,8 @@
         </a>
 
         <div>
-          <h2 class="h5 mt-4" id="subscribe-to-newsletter">Subscribe to our newsletter</h2>
-          <p class="f5 color-fg-muted mb-3">Get product updates, company news, and more.</p>
+          <h2 class="h5 mt-4" id="subscribe-to-newsletter">Subscribe to <em>The GitHub Insider</em></h2>
+          <p class="f5 color-fg-muted mb-3">Discover tips, technical guides, and best practices in our monthly newsletter for developers.</p>
           <a class="btn-mktg mb-4 btn-muted-mktg" data-analytics-event="{&quot;category&quot;:&quot;Subscribe&quot;,&quot;action&quot;:&quot;click to Subscribe&quot;,&quot;label&quot;:&quot;ref_cta:Subscribe;&quot;}" href="https://resources.github.com/newsletter/">
   Subscribe
   
