@@ -1,8 +1,12 @@
 #!/bin/bash
-#1
-$VALUE=10
-echo $VALUE
-#2. Делаю экспорт export VALUE=15
-echo $VALUE
-#3. Сразу при запуске скрипта VALUE=20 ./print-value.sh
-echo $VALUE
+if [ $1 ]; then
+    VALUE=$1
+    echo $VALUE
+
+elif [ $VALUE ]; then
+    echo "$VALUE"
+
+else
+    echo "VALUE не установлено"
+
+fi
