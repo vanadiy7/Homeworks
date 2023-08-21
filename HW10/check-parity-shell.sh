@@ -1,9 +1,10 @@
-#!/bin/bash
+#!/bin/sh
+
 var=$1
-if [[ ! $var =~ ^[+-]?[0-9]+$ ]]; then
-    echo "${var} - это не число"
-elif [[ $((var % 2)) -eq 0 ]]; then
-    echo "${var} - четная"
+if [ $(expr "$var" % "2") -eq 0 ]; then
+    echo "$1: Четное"
+elif [ $(expr "$var" % "2") -ne 0 ]; then
+    echo "$var: Не четное"
 else
-    echo "${var} - нечетная"
+    echo "Не число"
 fi
