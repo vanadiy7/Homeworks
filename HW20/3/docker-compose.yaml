@@ -1,0 +1,39 @@
+version: '3.1'
+
+services:
+  mysql:
+   image: mysql:8
+   container_name: mysql
+   restart: always
+   ports:
+     - "3306:3306"
+   environment:
+    MYSQL_ROOT_PASSWORD: root
+    MYSQL_USER: username
+    MYSQL_PASSWORD: password
+    MYSQL_DATABASE: simple_lamp
+   volumes:
+     - ./scriptsql.sh:/docker-entrypoint-initdb.d/scriptsql.sh
+     - ./simple-lamp/simple_lamp.sql:/etc/simple_lamp.sql
+   networks:
+     - default
+  memcached:
+    image: memcached:latest
+    container_name: memcached
+    ports:
+     - "11211:11211"
+    restart: always
+    networks:
+     - default
+  apache-php:
+   image: apache-lamp
+   container_name: apache-app
+   ports:
+     - "80:80"
+   volumes:
+     - ./simple-lamp/:/var/www/html/simple-lamp
+   networks:
+     - default
+  
+
+
