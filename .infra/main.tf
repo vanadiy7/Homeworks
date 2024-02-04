@@ -25,7 +25,7 @@ resource "google_artifact_registry_repository" "my_repository" {
 
 resource "google_artifact_registry_repository_iam_member" "member" {
   provider   = google
-  repository = google_artifact_registry_repository.my_repository.bobko-diplom
+  repository = google_artifact_registry_repository.my_repository.repository_id
   role       = "roles/artifactregistry.admin"
   member     = "serviceAccount:github-action-diplom@singular-glow-405611.iam.gserviceaccount.com"
 }
