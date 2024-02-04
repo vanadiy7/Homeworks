@@ -1,10 +1,4 @@
 project_id         = "singular-glow-405611"
 region             = "us-cenral1"                     
-zones              = ["us-central1-a", "us-central1-b", "us-central1-c"]
-name               = "terraform-gke-bobko"                  
+zones              = ["us-central1-a", "us-central1-b", "us-central1-c"]        
 machine_type       = "e2-medium"             
-min_count          = 1
-max_count          = 3
-disk_size_gb       = 10
-service_account    = "github-action-diplom@singular-glow-405611.iam.gserviceaccount.com"
-initial_node_count = 2
