@@ -149,6 +149,7 @@ resource "google_container_cluster" "primary" {
     enable_private_endpoint = false
     master_ipv4_cidr_block  = "172.16.0.0/28"
 }
+}
 
 resource "google_service_account" "kubernetes" {
   account_id = "kubernetes"
