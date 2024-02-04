@@ -1,4 +1,4 @@
-credentials        = "./terraform-gke-keyfile.json"
+credentials        = file("service-account.json")
 project_id         = "singular-glow-405611"
 region             = "us-cenral1"                     
 zones              = ["us-central1-a", "us-central1-b", "us-central1-c"]
