@@ -1,8 +1,3 @@
-variable "credentials" {
-  type        = string
-  description = "Location of the credential keyfile."
-}
-
 variable "project_id" {
   type        = string
   description = "The project ID to create the cluster."
