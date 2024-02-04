@@ -1,5 +1,5 @@
 provider "google" {
-  project     = var.project_id
+  project     = "singular-glow-405611"
   region      = var.region
   credentials = file("service-account.json")
 }
