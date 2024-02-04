@@ -1,5 +1,6 @@
 credentials        = file("service-account.json")
 project_id         = "singular-glow-405611"
+storage_class      = "STANDARD"
 region             = "us-cenral1"                     
 zones              = ["us-central1-a", "us-central1-b", "us-central1-c"]
 name               = "terraform-gke-bobko"                  
