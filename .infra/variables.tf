@@ -9,3 +9,8 @@ variable "region" {
 variable "storage_class" {
   default = "STANDARD"
 }
+
+variable "cluster_name" {
+  description = "The name of the GKE Autopilot cluster"
+  default     = "autopilot-cluster-bobko"
+}
