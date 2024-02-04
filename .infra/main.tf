@@ -13,6 +13,7 @@ resource "google_storage_bucket" "remote-backend" {
   name                        = bobko-diplom
   uniform_bucket_level_access = true
   location                    = var.region
+  storage_class               = var.storage_class
 
   versioning {
     enabled = true
