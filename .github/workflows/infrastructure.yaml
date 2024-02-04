@@ -3,10 +3,8 @@ name: Provision infra for Diplpom in GCP
 on:
  
   push:
-    branches:
-      - develop
-  workflow_dispatch:
-
+    branches: workflow_dispatch
+   
 permissions:
   contents: write
 
