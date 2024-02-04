@@ -18,13 +18,6 @@ resource "google_artifact_registry_repository" "my_repository" {
   format        = "DOCKER"
 }
 
-resource "google_artifact_registry_repository_iam_member" "member" {
-  provider   = google
-  repository = google_artifact_registry_repository.my_repository.repository_id
-  role       = "roles/artifactregistry.admin"
-  member     = "serviceAccount:github-action-diplom@singular-glow-405611.iam.gserviceaccount.com"
-}
-
 resource "google_compute_firewall" "allow-ssh" {
   name    = "allow-ssh"
   network = google_compute_network.main.name
