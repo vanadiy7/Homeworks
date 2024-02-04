@@ -74,7 +74,6 @@ resource "google_compute_router" "router" {
   network = google_compute_network.main.id
 }
 
-# https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_router_nat
 resource "google_compute_router_nat" "nat" {
   name   = "nat"
   router = google_compute_router.router.name
@@ -143,10 +142,6 @@ resource "google_container_cluster" "primary" {
 }
 }
 
-resource "google_service_account" "kubernetes" {
-  account_id = "kubernetes"
-}
-
 resource "google_container_node_pool" "general" {
   name       = "general"
   cluster    = google_container_cluster.primary.id
@@ -165,11 +160,7 @@ resource "google_container_node_pool" "general" {
       role = "general"
     }
 
-    service_account = google_service_account.kubernetes.email
-    oauth_scopes = [
-      "https://www.googleapis.com/auth/cloud-platform"
-    ]
-  }
+    }
 }
 
 resource "google_container_node_pool" "spot" {
@@ -200,9 +191,5 @@ resource "google_container_node_pool" "spot" {
       effect = "NO_SCHEDULE"
     }
 
-    service_account = google_service_account.kubernetes.email
-    oauth_scopes = [
-      "https://www.googleapis.com/auth/cloud-platform"
-    ]
-  }
+    }
 }
