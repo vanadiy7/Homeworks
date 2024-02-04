@@ -12,7 +12,6 @@ terraform {
   }
 }
 resource "google_artifact_registry_repository" "my_repository" {
-  provider      = google
   location      = var.region
   repository_id = "bobko-diplom"
   description   = "My repository"
