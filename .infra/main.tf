@@ -29,3 +29,26 @@ resource "google_artifact_registry_repository_iam_member" "member" {
   role       = "roles/artifactregistry.admin"
   member     = "serviceAccount:github-action-diplom@singular-glow-405611.iam.gserviceaccount.com"
 }
+
+resource "google_project_service" "gke" {
+  project = var.project
+  service = "container.googleapis.com"
+
+  disable_dependent_services = true
+}
+
+resource "google_container_cluster" "autopilot" {
+  depends_on = [google_project_service.gke]
+  
+  name       = var.cluster_name
+  location   = var.region
+  project    = var.project
+
+  network    = google_compute_network.vpc.self_link
+  subnetwork = google_compute_subnetwork.subnet.self_link
+
+  cluster_autoscaling {
+    auto_provisioning_defaults {
+      service_account = google_service_account.cluster_sa.email
+    }
+  }
