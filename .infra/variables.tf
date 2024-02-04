@@ -1,8 +1,3 @@
-variable "cluster_name" {
-  type        = string
-  description = "The name of the GKE cluster"
-}
-
 variable "credentials" {
   type        = string
   description = "Location of the credential keyfile."
