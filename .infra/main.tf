@@ -30,25 +30,80 @@ resource "google_artifact_registry_repository_iam_member" "member" {
   member     = "serviceAccount:github-action-diplom@singular-glow-405611.iam.gserviceaccount.com"
 }
 
-resource "google_project_service" "gke" {
-  project = var.project
-  service = "container.googleapis.com"
+module "gke" {
+  source                     = "terraform-google-modules/kubernetes-engine/google"
+  project_id                 = var.project_id
+  name                       = var.name
+  region                     = var.region
+  zones                      = var.zones
+  network                    = "default"
+  subnetwork                 = "default"
+  ip_range_pods              = ""
+  ip_range_services          = ""
+  http_load_balancing        = false
+  network_policy             = true
+  horizontal_pod_autoscaling = true
+  filestore_csi_driver       = false
 
-  disable_dependent_services = true
-}
+  node_pools = [
+    {
+      name                      = "default-node-pool"
+      machine_type              = var.machine_type
+      node_locations            = "us-central1-b,us-central1-c"
+      min_count                 = var.min_count
+      max_count                 = var.max_count
+      local_ssd_count           = var.disk_size_gb
+      disk_type                 = "pd-standard"
+      image_type                = "COS_CONTAINERD"
+      auto_repair               = true
+      auto_upgrade              = true
+      service_account           = var.service_account
+      preemptible               = false
+      initial_node_count        = var.initial_node_count
+    },
+  ]
 
-resource "google_container_cluster" "autopilot" {
-  depends_on = [google_project_service.gke]
-  
-  name       = var.cluster_name
-  location   = var.region
-  project    = var.project
+  node_pools_oauth_scopes = {
+    all = []
 
-  network    = google_compute_network.vpc.self_link
-  subnetwork = google_compute_subnetwork.subnet.self_link
+    default-node-pool = [
+      "https://www.googleapis.com/auth/cloud-platform",
+    ]
+  }
 
-  cluster_autoscaling {
-    auto_provisioning_defaults {
-      service_account = google_service_account.cluster_sa.email
+  node_pools_labels = {
+    all = {}
+
+    default-node-pool = {
+      default-node-pool = true
     }
   }
+
+  node_pools_metadata = {
+    all = {}
+
+    default-node-pool = {
+      node-pool-metadata-custom-value = "my-node-pool"
+    }
+  }
+
+  node_pools_taints = {
+    all = []
+
+    default-node-pool = [
+      {
+        key    = "default-node-pool"
+        value  = true
+        effect = "PREFER_NO_SCHEDULE"
+      },
+    ]
+  }
+
+  node_pools_tags = {
+    all = []
+
+    default-node-pool = [
+      "default-node-pool",
+    ]
+  }
+}
