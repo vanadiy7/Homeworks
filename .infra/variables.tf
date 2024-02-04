@@ -5,3 +5,7 @@ variable "project" {
 variable "region" {
   default = "us-central1"
 }
+
+variable "storage_class" {
+  default = "STANDARD"
+}
