@@ -1,8 +1,3 @@
-variable "storage_class" {
-  type        = string
-  description = "The type of storage_class"
-}
-
 variable "cluster_name" {
   type        = string
   description = "The name of the GKE cluster"
