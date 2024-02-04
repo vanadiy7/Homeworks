@@ -17,8 +17,3 @@ variable "machine_type" {
   type        = string
   description = "Type of the node compute engines."
 }
-
-variable "initial_node_count" {
-  type        = number
-  description = "The number of nodes to create in this cluster's default node pool."
-}
