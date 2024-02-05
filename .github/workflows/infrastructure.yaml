@@ -29,15 +29,6 @@ jobs:
         run: |
           echo "$GOOGLE_APPLICATION_CREDENTIALS" > service-account.json
 
-      - name: enable API the Google Cloud Console
-        run: |
-          gcloud auth application-default login
-          gcloud config set account babaika.ko@gmail.com
-          gcloud config set project singular-glow-405611
-          gcloud services enable container.googleapis.com --project=singular-glow-405611
-          gcloud services enable container.googleapis.com
-          gcloud services enable compute.googleapis.com
-
       - name: Terraform init
         run: |
           terraform init
