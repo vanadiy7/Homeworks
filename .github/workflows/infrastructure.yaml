@@ -3,7 +3,9 @@ name: Provision infra for Diplpom in GCP
 on:
  
   push:
-    branches: workflow_dispatch
+    branches: 
+      -develop
+  workflow_dispatch:
       
   
      
@@ -26,6 +28,12 @@ jobs:
           GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
         run: |
           echo "$GOOGLE_APPLICATION_CREDENTIALS" > service-account.json
+
+      - name: enable API the Google Cloud Console
+        run: |
+          gcloud services enable container.googleapis.com --project=singular-glow-405611
+          gcloud services enable container.googleapis.com
+          gcloud services enable compute.googleapis.com
 
       - name: Terraform init
         run: |
