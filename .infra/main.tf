@@ -39,7 +39,7 @@ resource "google_project_service" "container" {
 }
 
 resource "google_compute_network" "main" {
-  name                            = "my_main"
+  name                            = "mymain"
   routing_mode                    = "REGIONAL"
   auto_create_subnetworks         = false
   mtu                             = 1460
@@ -52,7 +52,7 @@ resource "google_compute_network" "main" {
 }
 
 resource "google_compute_subnetwork" "private" {
-  name                     = "my_private"
+  name                     = "myprivate"
   ip_cidr_range            = "10.0.0.0/18"
   region                   = var.region
   network                  = google_compute_network.main.id
