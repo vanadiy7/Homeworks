@@ -19,7 +19,7 @@ jobs:
     defaults:
       run:
         working-directory: ./.infra
-    timeout-minutes: 5
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v3
 
