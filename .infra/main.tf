@@ -1,6 +1,6 @@
 provider "google" {
-  project     = "singular-glow-405611"
-  region      = "europe-west2"
+  project     = var.project_id
+  region      = var.region
   credentials = file("service-account.json")
 }
 
@@ -39,7 +39,7 @@ resource "google_project_service" "container" {
 }
 
 resource "google_compute_network" "main" {
-  name                            = "mymain"
+  name                            = "myvps"
   routing_mode                    = "REGIONAL"
   auto_create_subnetworks         = false
   mtu                             = 1460
@@ -52,7 +52,7 @@ resource "google_compute_network" "main" {
 }
 
 resource "google_compute_subnetwork" "private" {
-  name                     = "myprivate"
+  name                     = "myprivsub"
   ip_cidr_range            = "10.0.0.0/18"
   region                   = var.region
   network                  = google_compute_network.main.id
@@ -69,15 +69,15 @@ resource "google_compute_subnetwork" "private" {
 }
 
 resource "google_compute_router" "router" {
-  name    = "router"
+  name    = "myrouter"
   region  = var.region
   network = google_compute_network.main.id
 }
 
 resource "google_compute_router_nat" "nat" {
-  name   = "nat"
+  name   = "mynat"
   router = google_compute_router.router.name
-  region = "europe-west2"
+  region = var.region
 
   source_subnetwork_ip_ranges_to_nat = "LIST_OF_SUBNETWORKS"
   nat_ip_allocate_option             = "MANUAL_ONLY"
@@ -102,7 +102,7 @@ resource "google_container_cluster" "primary" {
   name                     = "primary"
   location                 = var.region
   remove_default_node_pool = true
-  initial_node_count       = 1
+  initial_node_count       = 2
   network                  = google_compute_network.main.self_link
   subnetwork               = google_compute_subnetwork.private.self_link
   logging_service          = "logging.googleapis.com/kubernetes"
@@ -110,7 +110,7 @@ resource "google_container_cluster" "primary" {
   networking_mode          = "VPC_NATIVE"
 
   node_locations = [
-    "europe-west2-b"
+    "us-central1-b"
   ]
 
   addons_config {
@@ -118,7 +118,7 @@ resource "google_container_cluster" "primary" {
       disabled = true
     }
     horizontal_pod_autoscaling {
-      disabled = false
+      disabled = true
     }
   }
 
@@ -145,7 +145,7 @@ resource "google_container_cluster" "primary" {
 resource "google_container_node_pool" "general" {
   name       = "general"
   cluster    = google_container_cluster.primary.id
-  node_count = 1
+  node_count = 2
 
   management {
     auto_repair  = true
