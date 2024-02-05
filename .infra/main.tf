@@ -1,6 +1,6 @@
 provider "google" {
   project     = "singular-glow-405611"
-  region      = "us-cenral1"
+  region      = "europe-west2"
   credentials = file("service-account.json")
 }
 
@@ -77,7 +77,7 @@ resource "google_compute_router" "router" {
 resource "google_compute_router_nat" "nat" {
   name   = "nat"
   router = google_compute_router.router.name
-  region = "us-central1"
+  region = "europe-west2"
 
   source_subnetwork_ip_ranges_to_nat = "LIST_OF_SUBNETWORKS"
   nat_ip_allocate_option             = "MANUAL_ONLY"
@@ -110,7 +110,7 @@ resource "google_container_cluster" "primary" {
   networking_mode          = "VPC_NATIVE"
 
   node_locations = [
-    "us-central1-b"
+    "europe-west2-b"
   ]
 
   addons_config {
