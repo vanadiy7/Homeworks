@@ -9,7 +9,7 @@ variable "region" {
 }
 
 variable "zones" {
-  type        = list(string)
+  type        = string
   description = "The zones to create the cluster."
 }
 
