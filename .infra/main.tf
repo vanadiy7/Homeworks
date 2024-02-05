@@ -159,7 +159,7 @@ resource "google_container_node_pool" "general" {
     labels = {
       role = "general"
     }
-service_account = "github-action-diplom@singular-glow-405611.iam.gserviceaccount.com"
+  service_account = "github-action-diplom@singular-glow-405611.iam.gserviceaccount.com"
     oauth_scopes = [
       "https://www.googleapis.com/auth/cloud-platform"
     ]
@@ -195,7 +195,7 @@ resource "google_container_node_pool" "spot" {
       effect = "NO_SCHEDULE"
     }
 
-service_account = "github-action-diplom@singular-glow-405611.iam.gserviceaccount.com"
+  service_account = "github-action-diplom@singular-glow-405611.iam.gserviceaccount.com"
     oauth_scopes = [
       "https://www.googleapis.com/auth/cloud-platform"
     ]
