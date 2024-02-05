@@ -101,7 +101,7 @@ resource "google_compute_address" "nat" {
 resource "google_container_cluster" "primary" {
   name                     = "primary"
   location                 = var.region
-  remove_default_node_pool = true
+  remove_default_node_pool = false
   initial_node_count       = 2
   network                  = google_compute_network.main.self_link
   subnetwork               = google_compute_subnetwork.private.self_link
@@ -118,7 +118,7 @@ resource "google_container_cluster" "primary" {
       disabled = true
     }
     horizontal_pod_autoscaling {
-      disabled = true
+      disabled = false
     }
   }
 
