@@ -110,7 +110,7 @@ resource "google_container_cluster" "private" {
   networking_mode          = "VPC_NATIVE"
 
   node_locations = [
-    "us-east1-b"
+    "us-central1-b"
   ]
 
   addons_config {
