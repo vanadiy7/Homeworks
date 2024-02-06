@@ -51,7 +51,7 @@ resource "google_compute_network" "main" {
   ]
 }
 
-resource "google_compute_subnetwork" "subnetwork" {
+resource "google_compute_subnetwork" "private" {
   name                     = "mysubdip"
   ip_cidr_range            = "10.0.0.0/18"
   region                   = var.region
@@ -59,11 +59,11 @@ resource "google_compute_subnetwork" "subnetwork" {
   private_ip_google_access = false
 
   secondary_ip_range {
-    range_name    = "k8s-pod-range"
+    range_name    = "k8s-podd-range"
     ip_cidr_range = "10.48.0.0/14"
   }
   secondary_ip_range {
-    range_name    = "k8s-service-range"
+    range_name    = "k8s-services-range"
     ip_cidr_range = "10.52.0.0/20"
   }
 }
@@ -98,13 +98,13 @@ resource "google_compute_address" "nat" {
   depends_on = [google_project_service.compute]
 }
 
-resource "google_container_cluster" "gke-diplom" {
+resource "google_container_cluster" "private" {
   name                     = "gke-diplom"
   location                 = var.region
   remove_default_node_pool = true
   initial_node_count       = 2
   network                  = google_compute_network.main.self_link
-  subnetwork               = google_compute_subnetwork.subnetwork.self_link
+  subnetwork               = google_compute_subnetwork.private.self_link
   logging_service          = "logging.googleapis.com/kubernetes"
   monitoring_service       = "monitoring.googleapis.com/kubernetes"
   networking_mode          = "VPC_NATIVE"
@@ -131,8 +131,8 @@ resource "google_container_cluster" "gke-diplom" {
   }
 
   ip_allocation_policy {
-    cluster_secondary_range_name  = "k8s-pod-range"
-    services_secondary_range_name = "k8s-service-range"
+    cluster_secondary_range_name  = "k8s-podd-range"
+    services_secondary_range_name = "k8s-services-range"
   }
 
   private_cluster_config {
@@ -144,7 +144,7 @@ resource "google_container_cluster" "gke-diplom" {
 
 resource "google_container_node_pool" "general" {
   name       = "general"
-  cluster    = google_container_cluster.gke-diplom.id
+  cluster    = google_container_cluster.private.id
   node_count = 2
 
   management {
@@ -169,7 +169,7 @@ resource "google_container_node_pool" "general" {
 
 resource "google_container_node_pool" "spot" {
   name    = "spot"
-  cluster = google_container_cluster.gke-diplom.id
+  cluster = google_container_cluster.private.id
 
   management {
     auto_repair  = true
