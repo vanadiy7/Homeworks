@@ -75,7 +75,7 @@ resource "google_compute_router" "router" {
 }
 
 resource "google_compute_router_nat" "nat" {
-  name   = "nat1"
+  name   = "nat"
   router = google_compute_router.router.name
   region = var.region
 
@@ -90,8 +90,8 @@ resource "google_compute_router_nat" "nat" {
   nat_ips = [google_compute_address.nat.self_link]
 }
 
-resource "google_compute_address" "nat1" {
-  name         = "nat1"
+resource "google_compute_address" "nat" {
+  name         = "nat"
   address_type = "EXTERNAL"
   network_tier = "PREMIUM"
 
