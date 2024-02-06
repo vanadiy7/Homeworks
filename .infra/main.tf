@@ -110,7 +110,7 @@ resource "google_container_cluster" "gke-diplom" {
   networking_mode          = "VPC_NATIVE"
 
   node_locations = [
-    "us-central1-c"
+    "europe-west1-b"
   ]
 
   addons_config {
