@@ -2,12 +2,9 @@ name: Deploy Spring App
 
 on:
   push:
-    branches: workflow_dispatch
-    
-  
-      
-  
-    
+    branches:
+      - develop
+  workflow_dispatch:   
 
 jobs:
   deploy:
@@ -37,6 +34,6 @@ jobs:
       env:
         GOOGLE_PROJECT: ${{ secrets.GOOGLE_PROJECT }}
       run: |
-        gcloud container clusters get-credentials gke-diplom --region us-central1
+        gcloud container clusters get-credentials diplom --region us-central1
         sed -i "s/GOOGLE_PROJECT/$GOOGLE_PROJECT/g" resources.yaml
         kubectl apply -f resources.yaml
