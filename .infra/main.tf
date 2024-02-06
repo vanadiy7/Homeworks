@@ -39,11 +39,11 @@ resource "google_project_service" "container" {
 }
 
 resource "google_compute_network" "main" {
-  name                            = "mynetdip"
+  name                            = "main"
   routing_mode                    = "REGIONAL"
   auto_create_subnetworks         = false
   mtu                             = 1460
-  delete_default_routes_on_create = true
+  delete_default_routes_on_create = false
 
   depends_on = [
     google_project_service.compute,
@@ -52,7 +52,7 @@ resource "google_compute_network" "main" {
 }
 
 resource "google_compute_subnetwork" "private" {
-  name                     = "mysubdip"
+  name                     = "private"
   ip_cidr_range            = "10.0.0.0/18"
   region                   = var.region
   network                  = google_compute_network.main.id
@@ -69,13 +69,13 @@ resource "google_compute_subnetwork" "private" {
 }
 
 resource "google_compute_router" "router" {
-  name    = "mrouter"
+  name    = "router"
   region  = var.region
   network = google_compute_network.main.id
 }
 
 resource "google_compute_router_nat" "nat" {
-  name   = "mnat"
+  name   = "nat"
   router = google_compute_router.router.name
   region = var.region
 
@@ -102,7 +102,7 @@ resource "google_container_cluster" "private" {
   name                     = "diplom"
   location                 = var.region
   remove_default_node_pool = true
-  initial_node_count       = 2
+  initial_node_count       = 1
   network                  = google_compute_network.main.self_link
   subnetwork               = google_compute_subnetwork.private.self_link
   logging_service          = "logging.googleapis.com/kubernetes"
@@ -145,7 +145,7 @@ resource "google_container_cluster" "private" {
 resource "google_container_node_pool" "general" {
   name       = "general"
   cluster    = google_container_cluster.private.id
-  node_count = 2
+  node_count = 1
 
   management {
     auto_repair  = true
