@@ -90,8 +90,8 @@ resource "google_compute_router_nat" "nat" {
   nat_ips = [google_compute_address.nat.self_link]
 }
 
-resource "google_compute_address" "nat" {
-  name         = "nat"
+resource "google_compute_address" "nat1" {
+  name         = "nat1"
   address_type = "EXTERNAL"
   network_tier = "PREMIUM"
 
