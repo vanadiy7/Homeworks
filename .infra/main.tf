@@ -99,7 +99,7 @@ resource "google_compute_address" "nat" {
 }
 
 resource "google_container_cluster" "private" {
-  name                     = "gke-diplom"
+  name                     = "diplom"
   location                 = var.region
   remove_default_node_pool = true
   initial_node_count       = 2
@@ -110,7 +110,7 @@ resource "google_container_cluster" "private" {
   networking_mode          = "VPC_NATIVE"
 
   node_locations = [
-    "europe-west1-b"
+    "us-east1-b"
   ]
 
   addons_config {
