@@ -75,7 +75,7 @@ resource "google_compute_router" "router" {
 }
 
 resource "google_compute_router_nat" "nat" {
-  name   = "nat"
+  name   = "nat1"
   router = google_compute_router.router.name
   region = var.region
 
