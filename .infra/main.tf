@@ -59,11 +59,11 @@ resource "google_compute_subnetwork" "private" {
   private_ip_google_access = false
 
   secondary_ip_range {
-    range_name    = "k8s-podd-range"
+    range_name    = "k8s-pod-range"
     ip_cidr_range = "10.48.0.0/14"
   }
   secondary_ip_range {
-    range_name    = "k8s-services-range"
+    range_name    = "k8s-service-range"
     ip_cidr_range = "10.52.0.0/20"
   }
 }
@@ -131,8 +131,8 @@ resource "google_container_cluster" "private" {
   }
 
   ip_allocation_policy {
-    cluster_secondary_range_name  = "k8s-podd-range"
-    services_secondary_range_name = "k8s-services-range"
+    cluster_secondary_range_name  = "k8s-pod-range"
+    services_secondary_range_name = "k8s-service-range"
   }
 
   private_cluster_config {
