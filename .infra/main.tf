@@ -83,7 +83,7 @@ resource "google_compute_router_nat" "nat" {
   nat_ip_allocate_option             = "MANUAL_ONLY"
 
   subnetwork {
-    name                    = google_compute_subnetwork.subnetwork.id
+    name                    = google_compute_subnetwork.private.id
     source_ip_ranges_to_nat = ["ALL_IP_RANGES"]
   }
 
