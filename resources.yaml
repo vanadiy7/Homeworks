@@ -26,7 +26,7 @@ spec:
         app: myapp
     spec:
       containers:
-      - name: myapp-spring
+      - name: myapp
         image: us-central1-docker.pkg.dev/$GOOGLE_PROJECT/bobko-diplom/myapp:latest
         ports:
         - containerPort: 8080
