@@ -1,3 +1,4 @@
+---
 apiVersion: v1
 kind: Service
 metadata:
@@ -13,10 +14,11 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: myapp-deployment
-  namespace: default
+  name: myapp-depl
+  labels:
+    app: myapp
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: myapp
@@ -26,30 +28,5 @@ spec:
         app: myapp
     spec:
       containers:
-      - name: myapp
-        image: us-central1-docker.pkg.dev/$GOOGLE_PROJECT/bobko-diplom/myapp:latest
-        ports:
-        - containerPort: 8080
-      tolerations:
-      - key: instance_type
-        value: spot
-        effect: NoSchedule
-        operator: Equal
-      affinity:
-        nodeAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-            nodeSelectorTerms:
-            - matchExpressions:
-              - key: team
-                operator: In
-                values:
-                - devops
-        podAntiAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-          - labelSelector:
-              matchExpressions:
-              - key: app
-                operator: In
-                values:
-                - myapp
-            topologyKey: kubernetes.io/hostname
+      - name: myapp-container
+        image: us-central1-docker.pkg.dev/GOOGLE_PROJECT/bobko-diplom/myapp:latest
