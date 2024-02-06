@@ -39,11 +39,11 @@ resource "google_project_service" "container" {
 }
 
 resource "google_compute_network" "main" {
-  name                            = "myvps"
+  name                            = "mynet"
   routing_mode                    = "REGIONAL"
   auto_create_subnetworks         = false
   mtu                             = 1460
-  delete_default_routes_on_create = false
+  delete_default_routes_on_create = true
 
   depends_on = [
     google_project_service.compute,
@@ -51,12 +51,12 @@ resource "google_compute_network" "main" {
   ]
 }
 
-resource "google_compute_subnetwork" "private" {
-  name                     = "myprivsub"
+resource "google_compute_subnetwork" "subnetwork" {
+  name                     = "mysub"
   ip_cidr_range            = "10.0.0.0/18"
   region                   = var.region
   network                  = google_compute_network.main.id
-  private_ip_google_access = true
+  private_ip_google_access = false
 
   secondary_ip_range {
     range_name    = "k8s-pod-range"
@@ -69,13 +69,13 @@ resource "google_compute_subnetwork" "private" {
 }
 
 resource "google_compute_router" "router" {
-  name    = "myrouter"
+  name    = "mrouter"
   region  = var.region
   network = google_compute_network.main.id
 }
 
 resource "google_compute_router_nat" "nat" {
-  name   = "mynat"
+  name   = "mnat"
   router = google_compute_router.router.name
   region = var.region
 
@@ -83,7 +83,7 @@ resource "google_compute_router_nat" "nat" {
   nat_ip_allocate_option             = "MANUAL_ONLY"
 
   subnetwork {
-    name                    = google_compute_subnetwork.private.id
+    name                    = google_compute_subnetwork.subnetwork.id
     source_ip_ranges_to_nat = ["ALL_IP_RANGES"]
   }
 
@@ -98,10 +98,10 @@ resource "google_compute_address" "nat" {
   depends_on = [google_project_service.compute]
 }
 
-resource "google_container_cluster" "primary" {
-  name                     = "primary"
+resource "google_container_cluster" "gke-diplom" {
+  name                     = "gke-diplom"
   location                 = var.region
-  remove_default_node_pool = false
+  remove_default_node_pool = true
   initial_node_count       = 2
   network                  = google_compute_network.main.self_link
   subnetwork               = google_compute_subnetwork.private.self_link
@@ -110,7 +110,7 @@ resource "google_container_cluster" "primary" {
   networking_mode          = "VPC_NATIVE"
 
   node_locations = [
-    "us-central1-b"
+    "us-central1-c"
   ]
 
   addons_config {
@@ -144,7 +144,7 @@ resource "google_container_cluster" "primary" {
 
 resource "google_container_node_pool" "general" {
   name       = "general"
-  cluster    = google_container_cluster.primary.id
+  cluster    = google_container_cluster.gke-diplom.id
   node_count = 2
 
   management {
@@ -169,7 +169,7 @@ resource "google_container_node_pool" "general" {
 
 resource "google_container_node_pool" "spot" {
   name    = "spot"
-  cluster = google_container_cluster.primary.id
+  cluster = google_container_cluster.gke-diplom.id
 
   management {
     auto_repair  = true
@@ -177,8 +177,8 @@ resource "google_container_node_pool" "spot" {
   }
 
   autoscaling {
-    min_node_count = 0
-    max_node_count = 10
+    min_node_count = 1
+    max_node_count = 5
   }
 
   node_config {
