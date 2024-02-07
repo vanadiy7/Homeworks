@@ -41,6 +41,6 @@ jobs:
         --clusterrole=cluster-admin \
         --user=babaika.ko@gmail.com
         kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.8.2/deploy/static/provider/cloud/deploy.yaml
-        kubectl apply -f ingress.yaml.yaml
+        kubectl apply -f ingress.yaml
         kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.14.1/cert-manager.yaml
         
