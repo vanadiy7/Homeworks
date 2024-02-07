@@ -4,7 +4,7 @@ metadata:
   name: main-ingress
   annotations:
     kubernetes.io/ingress.class: nginx
-    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    cert-manager.io/cluster-issuer: "letsencrypt-diplom"
 spec:
   tls:
   - hosts:
@@ -18,7 +18,7 @@ spec:
             path: /
             backend:
               service:
-                name: kuber-service-1
+                name: myapp
                 port: 
                   number: 80
    
