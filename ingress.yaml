@@ -8,10 +8,10 @@ metadata:
 spec:
   tls:
   - hosts:
-    - diplom-bobko.dyndns-server.com
+    - diplom.bobko.com
     secretName: app-tls
   rules:
-   - host: diplom-bobko.dyndns-server.com
+   - host: diplom.bobko.com
      http:
         paths:
           - pathType: Prefix
