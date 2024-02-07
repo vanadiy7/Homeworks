@@ -37,7 +37,7 @@ jobs:
         gcloud container clusters get-credentials diplom --region us-central1
         sed -i "s/GOOGLE_PROJECT/$GOOGLE_PROJECT/g" resources.yaml
         kubectl apply -f resources.yaml
-        kubectl create clusterrolebinding myname-cluster-admin-binding \
+        kubectl create clusterrolebinding diplom-cluster-admin-binding \
         --clusterrole=cluster-admin \
         --user=babaika.ko@gmail.com
         kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.8.2/deploy/static/provider/cloud/deploy.yaml
