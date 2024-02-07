@@ -8,10 +8,10 @@ metadata:
 spec:
   tls:
   - hosts:
-    - app-1.bakavets.com
+    - diplom-bobko.dyndns-server.com
     secretName: app-tls
   rules:
-   - host: app-1.bakavets.com
+   - host: diplom-bobko.dyndns-server.com
      http:
         paths:
           - pathType: Prefix
