@@ -2,9 +2,9 @@ name: Deploy Spring App
 
 on:
   push:
-    branches: 
-      - develop
-  workflow_dispatch:   
+    branches:  workflow_dispatch
+      #- develop
+    
 
 jobs:
   deploy:
