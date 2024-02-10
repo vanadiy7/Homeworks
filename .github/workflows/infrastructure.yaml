@@ -1,0 +1,46 @@
+name: Provision infra for Diplpom in GCP
+
+on:
+ 
+  push:
+    branches: workflow_dispatch
+      #- develop 
+  
+  
+    
+  
+     
+permissions:
+  contents: write
+
+jobs:
+  Provision-Infra:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./.infra
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Retrieve the GCP service account secret and save it to a file
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
+        run: |
+          echo "$GOOGLE_APPLICATION_CREDENTIALS" > service-account.json
+
+      - name: Terraform init
+        run: |
+          terraform init
+
+      - name: Terraform plan
+        run: |
+          terraform plan
+      
+      - name: Terraform apply
+        run: |
+          terraform apply -auto-approve
+      
+      #- name: Terraform destroy
+       # run: |
+        #  terraform destroy -auto-approve

@@ -1,5 +1,0 @@
----
-# vars file for mysql
-mysql_user: "root"
-mysql_root_password: "%18062010Fhntv"
-mysql_db_name: "simple_lamp"

@@ -1,6 +1,0 @@
----
-# vars file for apache
-http_host: "lamp-app-master"
-http_conf: "lamp_app-master.conf"
-http_port: "80"
-disable_default: true

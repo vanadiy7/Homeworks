@@ -1,8 +1,0 @@
-vanadiy@vanadiy:~$ touch ./immortalfile
-vanadiy@vanadiy:~$ sudo chattr +i ./immortalfile
-vanadiy@vanadiy:~$ lsattr ./immortalfile 
-----i---------e------- ./immortalfile
-vanadiy@vanadiy:~$ sudo -i
-root@vanadiy:~# rm /home/vanadiy/immortalfile
-rm: cannot remove '/home/vanadiy/immortalfile': Operation not permitted
-

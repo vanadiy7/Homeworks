@@ -1,5 +1,0 @@
----
-# vars file for install
-app_user: "vanadiy"
-http_host: "lamp-app-master"
-download_app: "https://github.com/qyjohn/simple-lamp/archive/refs/heads/master.zip"
